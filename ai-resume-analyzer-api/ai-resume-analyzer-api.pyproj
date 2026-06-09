@@ -1,0 +1,86 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>2eb779dc-4463-4abc-b7b8-91af920ff158</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>run_api.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>ai-resume-analyzer-api</Name>
+    <RootNamespace>ai-resume-analyzer-api</RootNamespace>
+    <TestFramework>Pytest</TestFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="alembic\env.py" />
+    <Compile Include="app\ai\client.py" />
+    <Compile Include="app\ai\prompts.py" />
+    <Compile Include="app\ai\schemas.py" />
+    <Compile Include="app\ai\service.py" />
+    <Compile Include="app\auth\dependencies.py" />
+    <Compile Include="app\auth\router.py" />
+    <Compile Include="app\auth\schemas.py" />
+    <Compile Include="app\auth\security.py" />
+    <Compile Include="app\auth\service.py" />
+    <Compile Include="app\auth\__init__.py" />
+    <Compile Include="app\common\dependencies.py" />
+    <Compile Include="app\common\exceptions.py" />
+    <Compile Include="app\common\logging.py" />
+    <Compile Include="app\config.py" />
+    <Compile Include="app\database.py" />
+    <Compile Include="app\main.py" />
+    <Compile Include="app\resumes\models.py" />
+    <Compile Include="app\resumes\router.py" />
+    <Compile Include="app\resumes\schemas.py" />
+    <Compile Include="app\resumes\service.py" />
+    <Compile Include="app\resumes\__init__.py" />
+    <Compile Include="run_api.py" />
+    <Compile Include="app\users\models.py" />
+    <Compile Include="app\users\schemas.py" />
+    <Compile Include="app\users\service.py" />
+    <Compile Include="tests\conftest.py" />
+    <Compile Include="tests\test_auth.py" />
+    <Compile Include="tests\test_health.py" />
+    <Compile Include="tests\test_resumes.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="alembic\versions\" />
+    <Folder Include="app\" />
+    <Folder Include="app\auth\" />
+    <Folder Include="app\ai\" />
+    <Folder Include="app\common\" />
+    <Folder Include="app\resumes\" />
+    <Folder Include="app\users\" />
+    <Folder Include="alembic\" />
+    <Folder Include="github\" />
+    <Folder Include="github\workflows\" />
+    <Folder Include="tests\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".env" />
+    <Content Include=".env.example" />
+    <Content Include=".gitignore" />
+    <Content Include="github\workflows\tests.yml" />
+    <Content Include="requirements.txt" />
+    <Content Include="README.md" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
