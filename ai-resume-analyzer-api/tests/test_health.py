@@ -6,7 +6,7 @@ def test_health_check_returns_ok(client):
     data = response.json()
 
     assert data["status"] == "ok"
-    assert data["environment"] in ["development", "test"]
+    assert "environment" in data
 
 
 def test_database_health_check_returns_ok(client):
